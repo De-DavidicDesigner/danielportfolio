@@ -57,7 +57,18 @@ section[id] { scroll-margin-top: 4rem; }
 }
 
 /* Hero portrait (background removed): dissolve the cropped bottom edge into the page */
-.photo-fade { mask-image: linear-gradient(to bottom, #000 70%, transparent 99%); }
+.photo-fade { mask-image: linear-gradient(to bottom, #000 68%, transparent 98%); }
+/* Punchier photo plus an accent rim-light that traces the cut-out outline */
+.portrait-bold {
+  filter: contrast(1.08) saturate(1.12)
+    drop-shadow(0 0 2px color-mix(in srgb, var(--accent) 80%, white))
+    drop-shadow(0 0 22px color-mix(in srgb, var(--accent) 55%, transparent))
+    drop-shadow(0 30px 30px rgb(0 0 0 / 0.35));
+}
+.spin-slow { animation: spin 40s linear infinite; }
+@keyframes float { 50% { transform: translateY(-8px); } }
+.float { animation: float 5s ease-in-out infinite; }
+.float-delayed { animation: float 5s ease-in-out 2.5s infinite; }
 
 /* Theme switch: circular reveal from the toggle button (View Transitions API) */
 ::view-transition-old(root),

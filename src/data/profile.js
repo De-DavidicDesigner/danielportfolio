@@ -1,8 +1,7 @@
 // ONE customer = ONE profile object. Replace this file to build another person's site.
 // Every field except name, title and tagline is optional: empty fields are hidden, not shown blank.
 // Sample content below is placeholder copy, not real clients or statistics.
-// Background-removed PNG so the portrait blends into the page. Original: self.jpeg
-import self from "../assets/images/self-cutout.png";
+import self from "../assets/images/self-portrait.webp"; // chest-up crop of self-cutout.png
 import { projects } from "./projects";
 
 // Accent colour per mode. The dark one should be lighter so it stays readable on the dark background.
