@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniel Omolaja | Frontend Developer &amp; Graphic Designer</title>
+    <meta name="description" content="Frontend developer and graphic designer in Lagos, Nigeria." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Daniel Omolaja | Frontend Developer &amp; Graphic Designer" />
+    <meta property="og:description" content="Frontend developer and graphic designer in Lagos, Nigeria." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0b0d12" />
+    <!-- Apply the saved theme before first paint so there is no flash. Dark is the default. -->
+    <script>
+      (function () {
+        var dark = true;
+        try { dark = localStorage.getItem("theme") !== "light"; } catch (e) {}
+        document.documentElement.classList.toggle("dark", dark);
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#0b0d12" : "#f5f6f4");
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

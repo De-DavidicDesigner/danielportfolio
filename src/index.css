@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-accent-soft: color-mix(in srgb, var(--accent) 12%, var(--paper));
+}
+
+/* Colour tokens for each mode. Accents can be overridden from data/profile.js (theme). */
+:root {
+  color-scheme: light;
+  --paper: #f5f6f4;
+  --surface: #ffffff;
+  --ink: #0f1115;
+  --muted: #5a5e66;
+  --line: #dcdedb;
+  --accent: var(--accent-light, #2b44d6);
+  --on-accent: #ffffff;
+}
+.dark {
+  color-scheme: dark;
+  --paper: #0b0d12;
+  --surface: #12151c;
+  --ink: #eceef2;
+  --muted: #9aa1ad;
+  --line: #222632;
+  --accent: var(--accent-dark, #8b9bff);
+  --on-accent: #0b0d12;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-paper font-sans text-ink antialiased; }
+::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+section[id] { scroll-margin-top: 4rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Faint dot grid used behind the hero and page headers */
+.bg-dots {
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 14%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+.glow {
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 28%, transparent), transparent);
+}
+
+/* Hero portrait (background removed): dissolve the cropped bottom edge into the page */
+.photo-fade { mask-image: linear-gradient(to bottom, #000 70%, transparent 99%); }
+
+/* Theme switch: circular reveal from the toggle button (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@layer components {
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-on-accent shadow-[0_8px_24px_-10px_var(--accent)] transition hover:-translate-y-0.5 hover:brightness-110; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-md border border-ink/20 px-5 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:border-ink/60; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent; }
+}
