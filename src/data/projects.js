@@ -11,14 +11,26 @@
 
 export const projects = [
   {
-    title: "Personal Portfolio",
+    title: "Portfolio",
     description:
       "A responsive portfolio with a dark/light theme switch, a filterable projects page and smooth reveal animations.",
-    image: "",
+    image: "/images/projects/portfolio.png",
     category: "Web development",
     tools: ["React", "Tailwind CSS", "Vite"],
     year: "2026",
-    liveUrl: "",
+    liveUrl: "https://samuel-omolaja.vercel.app/",
+    repoUrl: "",
+    featured: true,
+  },
+  {
+    title: "Backend Portfolio",
+    description:
+      "A responsive portfolio for backend engineer, featuring a filterable projects section and smooth reveal animations.",
+    image: "/images/projects/samportfolio.png",
+    category: "Web development",
+    tools: ["React", "Tailwind CSS", "Vite"],
+    year: "2026",
+    liveUrl: "https://samuel-omolaja.vercel.app/",
     repoUrl: "",
     featured: true,
   },
@@ -26,11 +38,11 @@ export const projects = [
     title: "Weather Application",
     description:
       "Shows current conditions and a five-day forecast for any city, with location search and unit switching.",
-    image: "",
+    image: "/images/projects/weather.png",
     category: "Web app",
     tools: ["JavaScript", "REST API", "CSS"],
     year: "2025",
-    liveUrl: "",
+    liveUrl: "https://weather-app-tau-ten-79.vercel.app/",
     repoUrl: "",
     featured: true,
   },
@@ -38,11 +50,11 @@ export const projects = [
     title: "Business Website",
     description:
       "A clean, mobile-first website concept for a local service business, designed in Figma and built by hand.",
-    image: "",
+    image: "/images/projects/goshen.png",
     category: "Web design",
-    tools: ["HTML", "CSS", "Figma"],
+    tools: ["HTML", "CSS", "Figma", "React", "Tailwind CSS", "Vite", "Framer Motion"],
     year: "2025",
-    liveUrl: "",
+    liveUrl: "https://www.goshenluxe.com/",
     repoUrl: "",
     featured: true,
   },
