@@ -18,7 +18,7 @@ export const projects = [
     category: "Web development",
     tools: ["React", "Tailwind CSS", "Vite"],
     year: "2026",
-    liveUrl: "https://samuel-omolaja.vercel.app/",
+    liveUrl: "https://danielportfolio-henna.vercel.app/",
     repoUrl: "",
     featured: true,
   },
